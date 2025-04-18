@@ -1,16 +1,20 @@
+using System;   
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+public class PlayerData
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private int _currencyValue = 0;
+    private int _fishCatchedValue = 0;
+    public event Action<int> ChangedCurrencyValue; 
+    public event Action<int> ChangedFishCatchedValue; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Для зависимостей
+    
+    
+    
+    
+    
+    
+    
+    
 }

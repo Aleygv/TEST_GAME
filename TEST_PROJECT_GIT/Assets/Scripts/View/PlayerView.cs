@@ -1,16 +1,24 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TextMeshPro _currency;
+    [SerializeField] private TextMeshPro _fishCatchedValue;
+
+    public void Init(PlayerData playerData)
     {
-        
+        playerData.ChangedCurrencyValue += PlayerData_ChangedCurrencyValue;
+        playerData.ChangedFishCatchedValue += PlayerData_ChangedFishCatchedValue;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayerData_ChangedFishCatchedValue(int obj)
     {
-        
+            
+    }
+
+    private void PlayerData_ChangedCurrencyValue(int obj)
+    {
+            
     }
 }
