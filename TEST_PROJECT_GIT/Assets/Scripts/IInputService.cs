@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 public interface IInputService
 {
-    event Action Interact;
-    Vector2 MoveDirection { get; set; }
+    Vector2 MoveDirection { get; }
 }
