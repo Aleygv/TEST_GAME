@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
-        _inputService = new InputService(); // Создаем реализацию ввода
-        
+        _inputService = new InputService(); // Creating an input implementation
+
     }
 
     public void Init(Animator animator)
