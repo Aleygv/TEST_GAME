@@ -25,7 +25,7 @@ public class PlayerView : MonoBehaviour
     {
         //transform.position = _viewModel.Position;
 
-        // Альтернативно через физику:
+        // ????????????? ????? ??????:
         //_rb.linearVelocity = _viewModel.Velocity;
     }
 

@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/Assets/EntryPoint.cs" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/PlayerRoot.cs" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/View/PlayerView.cs" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/ViewModel/PlayerMovement.cs" charset="ISO-8859-1" />
   </component>
 </project>
