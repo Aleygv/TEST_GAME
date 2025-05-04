@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class FishingProgress : MonoBehaviour
     [SerializeField] private Image progressBarImage;
 
     public static FishingProgress Instance { get; set; }
-    
+
     private void Awake()
     {
         Instance = this;
@@ -37,4 +38,5 @@ public class FishingProgress : MonoBehaviour
     {
         return GetProgress() <= 0;
     }
+
 }

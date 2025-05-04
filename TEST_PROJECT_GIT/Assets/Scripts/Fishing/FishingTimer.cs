@@ -7,7 +7,7 @@ public class FishingTimer : MonoBehaviour
 {
     public static FishingTimer Instance { get; set; }
 
-    private readonly float _time = 8;
+    private readonly float _time = 4;
     [SerializeField] private float _timeToFish = 8;
 
     [SerializeField] private Image timerImage;

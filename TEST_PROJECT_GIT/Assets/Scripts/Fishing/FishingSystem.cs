@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class FishingSystem : MonoBehaviour
 {
@@ -15,25 +17,23 @@ public class FishingSystem : MonoBehaviour
 
     [SerializeField] private float timeLimit = 10f;
 
-    private int currentArrowIndex = 0;
+    private int _currentArrowIndex = 0;
 
-    private float timer;
+    private float _timer;
 
-    private bool isPlaying = false;
+    private bool _isPlaying = false;
 
-    //Прогресс бар
+    //Прогресс бар и таймер
     private float _progress = 0.0f;
     private readonly int _circlePrice = 20;
-    private readonly int _circlePenalty = 15;
+    private readonly float _circlePenalty = 0.15f;
     private bool _isPerfect = true;
     private float _correctRatio;
     private float _currentCount = 0;
     private float _totalCount;
     private float _addedProgress;
-
-    [SerializeField] private int repeatCount = 3; // Количество повторений
-    private int currentRepeat = 0;
-
+    private float _aimToFillProgressBar;
+    private int _currentRepeat = 0;
 
     void Start()
     {
@@ -46,12 +46,20 @@ public class FishingSystem : MonoBehaviour
 
     void Update()
     {
-        if (isPlaying)
+        if (_isPlaying)
         {
-            //Тут надо исправить ошибку с таймером, он не возобновляется по истечении времени
             if (IsTimeLeft())
             {
-                FishingProgress.Instance.AddToProgressBar(_addedProgress);
+                if (FishingProgress.Instance.IsNotFilled())
+                {
+                    EndGame(false);
+                    FishingProgress.Instance.ResetProgress();
+                }
+                if (FishingProgress.Instance.IsFillOver())
+                {
+                    EndGame(true);
+                    FishingProgress.Instance.ResetProgress();
+                }
             }
 
             // Проверяем все возможные клавиши
@@ -68,8 +76,10 @@ public class FishingSystem : MonoBehaviour
 
     public void StartMiniGame()
     {
-        if (!isPlaying)
+        if (!_isPlaying)
         {
+            GameManager.StartFishing();
+            
             fishingGameUI.SetActive(true);
             FishingProgress.Instance.gameObject.SetActive(true);
             FishingTimer.Instance.gameObject.SetActive(true);
@@ -85,9 +95,11 @@ public class FishingSystem : MonoBehaviour
 
             StartCoroutine(FishingTimer.Instance.StartTimer());
 
-            isPlaying = true;
+            _isPlaying = true;
 
-            currentRepeat = 0;
+            _currentRepeat = 0;
+            
+            _aimToFillProgressBar = Random.Range(4f, 8f);
         }
     }
 
@@ -139,22 +151,20 @@ public class FishingSystem : MonoBehaviour
     // Проверка нажатия на стрелочку
     private void CheckArrow(KeyCode key)
     {
-        KeyCode expectedKey = GetExpectedKey(currentArrowIndex);
-
-        float aimToFillProgressBar = Random.Range(4f, 8f);
+        KeyCode expectedKey = GetExpectedKey(_currentArrowIndex);
 
         if (key == expectedKey)
         {
-            arrowImages[currentArrowIndex].color = whiteColor;
-            currentArrowIndex++;
+            arrowImages[_currentArrowIndex].color = whiteColor;
+            _currentArrowIndex++;
             _currentCount++;
 
             // Проверяем, завершена ли текущая последовательность
-            if (currentArrowIndex >= arrowImages.Length || !arrowImages[currentArrowIndex].gameObject.activeSelf)
+            if (_currentArrowIndex >= arrowImages.Length || !arrowImages[_currentArrowIndex].gameObject.activeSelf)
             {
                 FishingTimer.Instance.ResetTimer();
-                _addedProgress = CalculateProgress(_correctRatio, _currentCount, _totalCount, _circlePenalty) /
-                                 aimToFillProgressBar;
+                _addedProgress = CalculateProgress(_correctRatio, _currentCount, _totalCount, 0.15f) /
+                                 _aimToFillProgressBar;
                 FishingProgress.Instance.AddToProgressBar(_addedProgress);
 
 
@@ -165,7 +175,7 @@ public class FishingSystem : MonoBehaviour
                 }
 
                 // Увеличиваем счётчик повторений
-                currentRepeat++;
+                _currentRepeat++;
 
                 if (FishingProgress.Instance.IsFillOver())
                 {
@@ -181,7 +191,6 @@ public class FishingSystem : MonoBehaviour
                 _currentCount = 0;
             }
         }
-
 
         else
         {
@@ -219,8 +228,8 @@ public class FishingSystem : MonoBehaviour
 
     private void ResetGame()
     {
-        currentArrowIndex = 0;
-        timer = timeLimit;
+        _currentArrowIndex = 0;
+        _timer = timeLimit;
 
         foreach (var arrow in arrowImages)
         {
@@ -233,73 +242,30 @@ public class FishingSystem : MonoBehaviour
 
     private float CalculateProgress(float correctRatio, float currentCount, float totalCount, float penalty)
     {
-        float progress;
         correctRatio = currentCount / totalCount;
 
         if (_isPerfect)
         {
-            return progress = correctRatio * 1.5f;
+            return correctRatio * 1.5f;
         }
 
         if (correctRatio >= 1f && !_isPerfect)
         {
-            return progress = correctRatio;
+            return correctRatio;
         }
 
-        if (correctRatio >= 0.9f)
-        {
-            return progress = correctRatio * 0.75f;
-        }
-
-        if (correctRatio >= 0.75f)
-        {
-            return progress = correctRatio * 0.5f;
-        }
-
-        if (correctRatio >= 0.5f)
-        {
-            return progress = 0;
-        }
-
-        if (correctRatio >= 0.25f)
-        {
-            return progress = -penalty * 0.5f;
-        }
-
-        else
-        {
-            return progress = -penalty;
-        }
+        return 0;
     }
 
     private bool IsTimeLeft()
     {
         if (FishingTimer.Instance.IsPenalty())
         {
-            FishingProgress.Instance.AddToProgressBar(_addedProgress);
-            
-            if (FishingProgress.Instance.IsNotFilled())
-            {
-                EndGame(false);
-                return true;
-            }
-
-            // Неправильное нажатие: меняем все цвета на красные
-            foreach (var arrow in arrowImages)
-            {
-                if (arrow.gameObject.activeSelf)
-                {
-                    arrow.color = redColor;
-                }
-            }
-
             _currentCount = 0;
             _isPerfect = false;
 
-            // Сбрасываем прогресс
-            StartCoroutine(ResetAfterError());
             ResetGame();
-            FishingProgress.Instance.ResetProgress();
+            FishingProgress.Instance.AddToProgressBar(-_circlePenalty);
             FishingTimer.Instance.ResetTimer();
 
             return true;
@@ -311,7 +277,7 @@ public class FishingSystem : MonoBehaviour
     // Завершение мини-игры
     private void EndGame(bool success)
     {
-        isPlaying = false;
+        _isPlaying = false;
         fishingGameUI.SetActive(false);
         FishingProgress.Instance.gameObject.SetActive(false);
         FishingTimer.Instance.gameObject.SetActive(false);
@@ -319,15 +285,16 @@ public class FishingSystem : MonoBehaviour
 
         if (success)
         {
-            // StartCoroutine(ResetAfterWin());
-            // FishingIsCatched.Instance.HideWin();
             Debug.Log("Мини игра пройдена!");
+            GameManager.FishingWin();
+            GameManager.CaughtFish();
+            GameManager.StopFishing();
         }
         else
         {
-            // StartCoroutine(ResetAfterLose());
-            // FishingIsCatched.Instance.HideLose();
             Debug.Log("Мини игра провалена!");
+            GameManager.FishingLose();
+            GameManager.StopFishing();
         }
     }
 
@@ -344,18 +311,6 @@ public class FishingSystem : MonoBehaviour
             }
         }
 
-        currentArrowIndex = 0;
-    }
-
-    private IEnumerator ResetAfterLose()
-    {
-        FishingIsCatched.Instance.ShowLose();
-        yield return new WaitForSeconds(2f);
-    }
-    
-    private IEnumerator ResetAfterWin()
-    {
-        FishingIsCatched.Instance.ShowWin();
-        yield return new WaitForSeconds(2f);
+        _currentArrowIndex = 0;
     }
 }
