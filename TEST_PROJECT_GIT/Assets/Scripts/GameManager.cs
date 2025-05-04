@@ -1,18 +1,37 @@
 using System;
-using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-       
+    public static event Action OnGameWin;
+    public static event Action OnGameLose;
 
+    public static void FishingWin()
+    {
+        OnGameWin?.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void FishingLose()
     {
+        OnGameLose?.Invoke();
+    }
 
+    public static event Action OnFishCaught;
+
+    public static void CaughtFish()
+    {
+        OnFishCaught?.Invoke();
+    }
+
+    public static event Action OnStartFishing;
+    public static event Action OnStopFishing;
+
+    public static void StartFishing()
+    {
+        OnStartFishing?.Invoke();
+    }
+
+    public static void StopFishing()
+    {
+        OnStopFishing?.Invoke();
     }
 }

@@ -23,6 +23,8 @@ public class FishingZone : MonoBehaviour
             _sprite.color = Color.green;
             OnPlayerInZone?.Invoke();
             _fishingSystem.StartMiniGame();
+            // Here you can disable Player Movement
+            
         }
     }
     private void OnTriggerExit2D(Collider2D other)

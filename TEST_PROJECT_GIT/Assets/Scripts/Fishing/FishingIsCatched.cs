@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,9 +15,19 @@ public class FishingIsCatched : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        HideWin();
+        HideLose();
+
+        GameManager.OnGameWin += ShowWin;
+        GameManager.OnGameLose += ShowLose;
+    }
+
     public void ShowWin()
     {
         winText.gameObject.SetActive(true);
+        StartCoroutine(ShowWinWindow());
     }
 
     public void HideWin()
@@ -27,10 +38,23 @@ public class FishingIsCatched : MonoBehaviour
     public void ShowLose()
     {
         loseText.gameObject.SetActive(true);
+        StartCoroutine(ShowWLoseWindow());
     }
 
     public void HideLose()
     {
         loseText.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowWinWindow()
+    {
+        yield return new WaitForSeconds(2f);
+        HideWin();
+    }
+    
+    private IEnumerator ShowWLoseWindow()
+    {
+        yield return new WaitForSeconds(2f);
+        HideLose();
     }
 }
