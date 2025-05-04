@@ -3,28 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderButton : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
+    [SerializeField] private int sceneIndex;
 
     public void LoadScene()
     {
-        Debug.Log($"Попытка загрузить сцену: {sceneName}");
+        Debug.Log($"Попытка загрузить сцену по индексу: {sceneIndex}");
 
-        // Диагностика: вывод всех сцен в билде
-        Debug.Log($"Доступные сцены в билде:");
-        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        if (sceneIndex >= 0 && sceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            string path = SceneUtility.GetScenePathByBuildIndex(i);
-            string name = System.IO.Path.GetFileNameWithoutExtension(path);
-            Debug.Log($"{i}: {name}");
-        }
-
-        if (SceneManager.GetSceneByName(sceneName).IsValid())
-        {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneIndex);
+            Debug.Log($"Сцена загружена успешно!");
         }
         else
         {
-            Debug.LogError($"Сцена с именем '{sceneName}' не найдена в Build Settings!");
+            Debug.LogError($"Неверный индекс сцены: {sceneIndex}");
         }
     }
 }

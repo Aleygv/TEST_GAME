@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,4 +38,5 @@ public class FishingProgress : MonoBehaviour
     {
         return GetProgress() <= 0;
     }
+
 }
