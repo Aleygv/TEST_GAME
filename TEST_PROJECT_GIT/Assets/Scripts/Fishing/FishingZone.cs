@@ -10,6 +10,7 @@ public class FishingZone : MonoBehaviour
 
     public event Action OnPlayerInZone;
 
+
     private void Start()
     {
         _player = FindFirstObjectByType<PlayerMovement>();
@@ -22,6 +23,8 @@ public class FishingZone : MonoBehaviour
         {
             _sprite.color = Color.green;
             OnPlayerInZone?.Invoke();
+
+            
             _fishingSystem.StartMiniGame();
             // Here you can disable Player Movement
             

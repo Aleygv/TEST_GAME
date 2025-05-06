@@ -1,43 +1,61 @@
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
-    
+
+
     private Animator _animator;
+    private ContactFilter2D _contactFilter;
     private Rigidbody2D _rb;
     private IInputService _inputService;
+
+
+    private PlayerInput _playerInput;
+    private Input_presystem inputSys;
+
+
+    private FishingSystem _fishingSystem;
 
 
 
     private void Awake()
     {
+        //MESS DO NOT TOUCH(or do, i'm not a CEO)
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
-        _inputService = new InputService(); // Создаем реализацию ввода
-        
+
+
+        _playerInput = GetComponent<PlayerInput>();
+        inputSys = new Input_presystem();
+        inputSys.Player.Enable();
+        inputSys.Player.interact.performed += interact;
+        inputSys.Player.Move.performed += MovePerformed;
+
+
+        //_inputService = new InputService(); // Creating an input implementation
+
     }
 
     public void Init(Animator animator)
     {
         _animator = animator;
+
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Move();
-        
-    }
+        //Move();
 
-    private void Move()
-    {
-        _rb.linearVelocity = new Vector2(
-            _inputService.MoveDirection.x * _moveSpeed,
-            _inputService.MoveDirection.y * _moveSpeed
-        );
-        if(_rb.linearVelocity != Vector2.zero )
+        Vector2 inputVector = inputSys.Player.Move.ReadValue<Vector2>();
+
+        _rb.linearVelocity = new Vector2(inputVector.x * _moveSpeed, inputVector.y * _moveSpeed);
+        if (_rb.linearVelocity != Vector2.zero)
         {
             _animator.SetFloat("MoveX", _rb.linearVelocity.x);
             _animator.SetFloat("MoveY", _rb.linearVelocity.y);
@@ -45,7 +63,24 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+
+
+
+    public void MovePerformed(InputAction.CallbackContext call)
+    {
+        Debug.Log(call);
+
+    }
+
+
+    public void interact(InputAction.CallbackContext call)
+    {
+        Debug.Log("DO SOMETHING!!!!!!!  " + call.phase);
+        //_fishingSystem.StartMiniGame();
+    }
 }
+
 
 
 //    private bool isMoving;

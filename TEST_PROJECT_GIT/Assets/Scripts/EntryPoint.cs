@@ -12,6 +12,7 @@ public class EntryPoint : MonoBehaviour
         // 1. Создаем системный объект игрока 
         GameObject playerSystem = new GameObject("PlayerSystem");
         playerSystem.AddComponent<Animator>();
+        playerSystem.AddComponent<PlayerInput>();
 
         // 2. Добавляем логические компоненты
         var movement = playerSystem.AddComponent<PlayerMovement>();
