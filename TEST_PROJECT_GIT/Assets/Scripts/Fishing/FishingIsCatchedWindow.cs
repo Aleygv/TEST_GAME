@@ -3,12 +3,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class FishingIsCatched : MonoBehaviour
+public class FishingIsCatchedWindow : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI winText;
     [SerializeField] private TextMeshProUGUI loseText;
 
-    public static FishingIsCatched Instance { get; set; }
+    public static FishingIsCatchedWindow Instance { get; set; }
 
     private void Awake()
     {
