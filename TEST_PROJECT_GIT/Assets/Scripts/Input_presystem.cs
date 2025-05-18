@@ -539,8 +539,6 @@ public partial class @Input_presystem: IInputActionCollection2, IDisposable
     }
     public interface IMinigameActions
     {
-        void OnSwipe(InputAction.CallbackContext context)
-        {
-        }
+        void OnSwipe(InputAction.CallbackContext context);
     }
 }

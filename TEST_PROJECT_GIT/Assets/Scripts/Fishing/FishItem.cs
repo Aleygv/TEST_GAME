@@ -3,4 +3,6 @@ using UnityEngine;
 public class FishItem : Item
 {
     public bool IsLegendary;
+    public int levelOfFish;
+    public float timeToCatch;
 }
