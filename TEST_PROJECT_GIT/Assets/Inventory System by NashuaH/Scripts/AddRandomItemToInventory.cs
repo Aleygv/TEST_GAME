@@ -11,16 +11,20 @@ public class AddRandomItemToInventory : MonoBehaviour
 {
     private void OnEnable()
     {
-        GameManager.OnFishCaught += AddRandomItem;
+        FishGenerator.OnFishCaught += AddRandomItem;
     }
 
     private void OnDisable()
     {
-        GameManager.OnFishCaught -= AddRandomItem;
+        FishGenerator.OnFishCaught -= AddRandomItem;
     }
+
+    private int levelOfBaitTEST = 2;
 
     // In case of random, this list becomes active in the Editor
     public List<Item> itemsToGive = new List<Item>();
+    
+    public List<BaitItem> baitsToGive = new List<BaitItem>();
 
     // The minimum number of a random item to be given, needs to be at least 1
     public int minimumItemsToGive = 1;
@@ -33,7 +37,8 @@ public class AddRandomItemToInventory : MonoBehaviour
     //The quantity to be added is also random based on the minimumItemsToGive and maximumItemsToGiv
     public void AddRandomItem()
     {
-        Inventory.instance.AddItem(itemsToGive[Random.Range(0, itemsToGive.Count)], Random.Range(minimumItemsToGive, maximumItemsToGive));
+        //Затычка в GenerateFish, нужно передавать потом от конкретной наживки
+        Inventory.instance.AddItem(itemsToGive[FishGenerator.GenerateFish(levelOfBaitTEST) - 1], Random.Range(minimumItemsToGive, maximumItemsToGive));
     }
 
 }

@@ -287,7 +287,7 @@ public class FishingSystem : MonoBehaviour
         {
             Debug.Log("Мини игра пройдена!");
             GameManager.FishingWin();
-            GameManager.CaughtFish();
+            FishGenerator.CaughtFish();
             GameManager.StopFishing();
         }
         else

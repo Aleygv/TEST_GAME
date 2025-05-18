@@ -15,13 +15,6 @@ public static class GameManager
         OnGameLose?.Invoke();
     }
 
-    public static event Action OnFishCaught;
-
-    public static void CaughtFish()
-    {
-        OnFishCaught?.Invoke();
-    }
-
     public static event Action OnStartFishing;
     public static event Action OnStopFishing;
 
