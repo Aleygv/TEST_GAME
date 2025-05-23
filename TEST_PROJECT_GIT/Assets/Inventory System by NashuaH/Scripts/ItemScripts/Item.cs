@@ -16,6 +16,8 @@ public class Item : ScriptableObject
     // The UI icon of the item 
     public Sprite itemIcon;
     
+    public ItemType itemType;
+    
     public virtual void Use()
     {
         //Use item

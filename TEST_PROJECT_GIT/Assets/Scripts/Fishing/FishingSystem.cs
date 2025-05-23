@@ -76,6 +76,7 @@ public class FishingSystem : MonoBehaviour
 
     public void StartMiniGame()
     {
+        //Change input_sheme (or in FishingZone)
         if (!_isPlaying)
         {
             GameManager.StartFishing();
@@ -283,6 +284,7 @@ public class FishingSystem : MonoBehaviour
         FishingTimer.Instance.gameObject.SetActive(false);
         StopCoroutine(FishingTimer.Instance.StartTimer());
 
+        //After conditions you can change scheme to PlayerInput
         if (success)
         {
             Debug.Log("Мини игра пройдена!");

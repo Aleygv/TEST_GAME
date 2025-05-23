@@ -1,7 +1,7 @@
 using System;   
 using UnityEngine;
 
-public class PlayerData
+public class PlayerData : MonoBehaviour
 {
     private int _currencyValue = 0;
     private int _fishCatchedValue = 0;
