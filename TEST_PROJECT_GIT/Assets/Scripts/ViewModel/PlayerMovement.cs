@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private IInputService _inputService;
 
 
-    private PlayerInput _playerInput;
+    
     private Input_presystem inputSys;
 
 
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         _rb.bodyType = RigidbodyType2D.Kinematic;
 
 
-        _playerInput = GetComponent<PlayerInput>();
+        
         inputSys = new Input_presystem();
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
