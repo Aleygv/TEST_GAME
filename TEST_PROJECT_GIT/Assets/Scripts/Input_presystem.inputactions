@@ -230,59 +230,26 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "df2baa8e-db6a-4cf6-bbb3-fcf238419e3d",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "5754650d-fbae-40cc-a7b6-b2b9eb98e50d",
+                    "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Touch",
                     "action": "swipe",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "121e6745-cf4a-4de0-b9cd-dddaba89eea6",
-                    "path": "<Touchscreen>/primaryTouch/delta/up",
+                    "name": "",
+                    "id": "6ca34541-b5bf-4e58-8e67-5df4c94af7ff",
+                    "path": "<Touchscreen>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
                     "action": "swipe",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "f188c476-833b-494f-b39e-ade395d3b24b",
-                    "path": "<Touchscreen>/primaryTouch/delta/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "swipe",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "5c77631d-ae01-4731-954a-0f5d40e1d3a0",
-                    "path": "<Touchscreen>/primaryTouch/delta/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "swipe",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "ec9b03db-4b55-4047-a1ed-13e7d831295f",
-                    "path": "<Touchscreen>/delta/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "swipe",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }

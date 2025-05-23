@@ -89,7 +89,7 @@ public class FishingSystem : MonoBehaviour
             StartCoroutine(FishingTimer.Instance.StartTimer());
             _isPlaying = true;
             _currentRepeat = 0;
-            _aimToFillProgressBar = Random.Range(4f, 8f);
+            _aimToFillProgressBar = Random.Range(4f, 9f);
         }
     }
 
@@ -120,7 +120,7 @@ public class FishingSystem : MonoBehaviour
     
     private void StartNewRound()
     {
-        int randomArrowCount = Random.Range(4, 9); // длина последовательности
+        int randomArrowCount = Random.Range(1, 4); // длина последовательности
         ArrowButton[] currentRoundArrows = GenerateRandomArrowSequence(randomArrowCount);
         _totalCount = currentRoundArrows.Length;
 

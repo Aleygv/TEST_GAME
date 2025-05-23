@@ -1,3 +1,4 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class FishingZone : MonoBehaviour
     private PlayerMovement _player;
 
     [SerializeField] private FishingSystem _fishingSystem;
+    [SerializeField] private GameObject _interactButton;
+    
 
     public event Action OnPlayerInZone;
 
@@ -20,6 +23,7 @@ public class FishingZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        _interactButton.SetActive(true);
         if (other.gameObject.CompareTag("Player"))
         {
             _sprite.color = Color.green;
@@ -28,7 +32,7 @@ public class FishingZone : MonoBehaviour
             // Проверяем, есть ли выбранная наживка
             Item selectedItem = SelectedItemManager.Instance.selectedItem;
 
-            if (selectedItem != null && selectedItem is BaitItem baitItem)
+            if (selectedItem != null && selectedItem is BaitItem baitItem && _player.test)
             {
                 // Проверяем, есть ли такая наживка в инвентаре
                 bool hasBait = Inventory.instance.HasItem(baitItem, baitItem.itemType);
@@ -59,6 +63,7 @@ public class FishingZone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _sprite.color = Color.yellow;
+            _interactButton.SetActive(false);
         }
     }
 }

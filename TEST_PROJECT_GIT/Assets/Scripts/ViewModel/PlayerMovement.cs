@@ -14,14 +14,13 @@ public class PlayerMovement : MonoBehaviour
     private ContactFilter2D _contactFilter;
     private Rigidbody2D _rb;
     private IInputService _inputService;
-
-
-    
     private Input_presystem inputSys;
 
+    
 
-    private FishingSystem _fishingSystem;
-
+    private Vector2 startTouchPosition;
+    private Vector2 endTouchPosition;
+    public bool test;
 
 
     private void Awake()
@@ -30,22 +29,21 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
 
-
-        
         inputSys = new Input_presystem();
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
-        // inputSys.Player.Move.performed += MovePerformed;
+        inputSys.Player.Move.performed += MovePerformed;
 
-
+        
         //_inputService = new InputService(); // Creating an input implementation
-
+        test = false;
     }
+
 
     public void Init(Animator animator)
     {
         _animator = animator;
-
+        
     }
 
     private void FixedUpdate()
@@ -61,16 +59,19 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetFloat("MoveY", _rb.linearVelocity.y);
         }
 
+
+
+
+
+
+
+
+
     }
-
-
-
-
 
     public void MovePerformed(InputAction.CallbackContext call)
     {
         Debug.Log(call);
-
     }
 
 
@@ -78,7 +79,25 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("DO SOMETHING!!!!!!!  " + call.phase);
         //_fishingSystem.StartMiniGame();
+        if (test)
+        {
+            test = false;
+            Debug.Log("MINIGAME!!!");
+            inputSys.Minigame.Disable();
+        }
+        else
+        {
+            Debug.Log("DOH");
+            inputSys.Minigame.Enable();
+            test = true;
+        }
     }
+
+    private void SwipePerformed(InputAction.CallbackContext context)
+    {
+        Debug.Log(context);
+    }
+
 }
 
 

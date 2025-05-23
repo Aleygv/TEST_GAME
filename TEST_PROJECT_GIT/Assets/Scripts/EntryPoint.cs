@@ -13,6 +13,7 @@ public class EntryPoint : MonoBehaviour
         GameObject playerSystem = new GameObject("PlayerSystem");
         playerSystem.AddComponent<Animator>();
         playerSystem.AddComponent<PlayerInput>();
+        playerSystem.AddComponent<FishingZone>();
         // playerSystem.AddComponent<PlayerData>();
 
         // 2. Добавляем логические компоненты
