@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         inputSys = new Input_presystem();
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
-        inputSys.Player.Move.performed += MovePerformed;
+        // inputSys.Player.Move.performed += MovePerformed;
 
 
         //_inputService = new InputService(); // Creating an input implementation

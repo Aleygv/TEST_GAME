@@ -14,7 +14,7 @@ public class Consumable : Item
       
 
     
-         Inventory.instance.RemoveItem(this, 1);
+         // Inventory.instance.RemoveItem(this, 1);
     }
 
     public enum consumableType { Potion, Food }

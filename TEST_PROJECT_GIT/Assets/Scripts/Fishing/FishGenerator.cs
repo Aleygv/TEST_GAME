@@ -9,14 +9,6 @@ public static class FishGenerator
     {
         OnFishCaught?.Invoke();
     }
-
-    //Эвент для устанавления наживки на удочки в данный момент
-    public static event Action OnBaitChanged;
-
-    public static void BaitChange()
-    {
-        OnBaitChanged?.Invoke();
-    }
     
     public static int GenerateFish(int levelOfBait)
     {
@@ -27,7 +19,7 @@ public static class FishGenerator
 
         if (levelOfBait >= 2)
         {
-            return Random.value < 0.5f ? levelOfBait - 1 : levelOfBait;
+            return Random.value < 0.4f ? levelOfBait - 1 : levelOfBait; //40% на рыбу уровня меньше
         }
 
         return 0;
