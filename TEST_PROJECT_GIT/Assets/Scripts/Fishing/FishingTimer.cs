@@ -1,16 +1,17 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class FishingTimer : MonoBehaviour
 {
     public static FishingTimer Instance { get; set; }
 
+    [SerializeField] private float timeToFish;
     private readonly float _time = 4;
-    [SerializeField] private float _timeToFish = 8;
-
-    [SerializeField] private Image timerImage;
+    [SerializeField] private TextMeshProUGUI timerText;
     
     private void Awake()
     {
@@ -20,21 +21,21 @@ public class FishingTimer : MonoBehaviour
     // Таймер мини-игры
     public IEnumerator StartTimer()
     {
-        while (_timeToFish > 0)
+        while (timeToFish > 0)
         {
-            _timeToFish -= Time.deltaTime;
-            timerImage.fillAmount = _timeToFish / _time;
+            timeToFish -= Time.deltaTime;
+            timerText.text = (timeToFish).ToString("F2");
             yield return null;
         }
     }
 
     public bool IsPenalty()
     {
-        return _timeToFish <= 0;
+        return timeToFish <= 0;
     }
 
     public void ResetTimer()
     {
-        _timeToFish = _time;
+        timeToFish = _time;
     }
 }

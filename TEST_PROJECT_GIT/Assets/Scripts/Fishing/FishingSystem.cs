@@ -76,30 +76,19 @@ public class FishingSystem : MonoBehaviour
 
     public void StartMiniGame()
     {
-        //Change input_sheme (or in FishingZone)
         if (!_isPlaying)
         {
             GameManager.StartFishing();
-            
+
             fishingGameUI.SetActive(true);
             FishingProgress.Instance.gameObject.SetActive(true);
             FishingTimer.Instance.gameObject.SetActive(true);
 
-            int randomArrowCount = Random.Range(4, 9);
-
-            ArrowButton[] currentRoundArrows = GenerateRandomArrowSequence(randomArrowCount);
-            _totalCount = currentRoundArrows.Length;
-
-            AssignArrowData(currentRoundArrows);
-
-            ResetGame();
+            StartNewRound(); // Генерируем первую последовательность
 
             StartCoroutine(FishingTimer.Instance.StartTimer());
-
             _isPlaying = true;
-
             _currentRepeat = 0;
-            
             _aimToFillProgressBar = Random.Range(4f, 8f);
         }
     }
@@ -127,6 +116,16 @@ public class FishingSystem : MonoBehaviour
         }
 
         return sequence;
+    }
+    
+    private void StartNewRound()
+    {
+        int randomArrowCount = Random.Range(4, 9); // длина последовательности
+        ArrowButton[] currentRoundArrows = GenerateRandomArrowSequence(randomArrowCount);
+        _totalCount = currentRoundArrows.Length;
+
+        AssignArrowData(currentRoundArrows);
+        ResetGame();
     }
 
     // Назначение данных стрелочкам
@@ -168,34 +167,22 @@ public class FishingSystem : MonoBehaviour
                                  _aimToFillProgressBar;
                 FishingProgress.Instance.AddToProgressBar(_addedProgress);
 
-
-                if (FishingProgress.Instance.IsNotFilled())
-                {
-                    EndGame(false); // Завершаем игру проигрышем
-                    FishingProgress.Instance.ResetProgress();
-                }
-
-                // Увеличиваем счётчик повторений
-                _currentRepeat++;
-
                 if (FishingProgress.Instance.IsFillOver())
                 {
-                    EndGame(true); // Завершаем игру успехом
+                    EndGame(true);
                     FishingProgress.Instance.ResetProgress();
                 }
                 else
                 {
-                    ResetGame();
+                    StartNewRound(); // 🎯 Начинаем новый раунд с новой последовательностью
                     _isPerfect = true;
+                    _currentCount = 0;
                 }
-
-                _currentCount = 0;
             }
         }
-
         else
         {
-            // Неправильное нажатие: меняем все цвета на красные
+            // Ошибочное нажатие — меняем цвет на красный и сбрасываем
             foreach (var arrow in arrowImages)
             {
                 if (arrow.gameObject.activeSelf)
@@ -206,8 +193,6 @@ public class FishingSystem : MonoBehaviour
 
             _currentCount = 0;
             _isPerfect = false;
-
-            // Сбрасываем прогресс
             StartCoroutine(ResetAfterError());
         }
     }
