@@ -17,6 +17,7 @@ public class FishingZone : MonoBehaviour
         _sprite = transform.GetComponent<SpriteRenderer>();
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -24,18 +25,40 @@ public class FishingZone : MonoBehaviour
             _sprite.color = Color.green;
             OnPlayerInZone?.Invoke();
 
-            
-            _fishingSystem.StartMiniGame();
-            // Here you can disable Player Movement
-            
+            // Проверяем, есть ли выбранная наживка
+            Item selectedItem = SelectedItemManager.Instance.selectedItem;
+
+            if (selectedItem != null && selectedItem is BaitItem baitItem)
+            {
+                // Проверяем, есть ли такая наживка в инвентаре
+                bool hasBait = Inventory.instance.HasItem(baitItem, baitItem.itemType);
+
+                if (hasBait)
+                {
+                    // Запускаем мини-игру
+                    _fishingSystem.StartMiniGame();
+                }
+                else
+                {
+                    Debug.Log("Нет наживки для рыбалки.");
+                    GameManager.ShowNoBaitMessage(); // Можно вызвать UI-оповещение
+                }
+            }
+            else
+            {
+                Debug.Log("Выберите наживку перед рыбалкой.");
+                GameManager.ShowNoBaitMessage(); // Можно вызвать UI-оповещение
+            }
+
+            // Здесь можно отключить движение игрока, если нужно
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             _sprite.color = Color.yellow;
-            
         }
     }
 }

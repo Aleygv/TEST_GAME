@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class EntryPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerPrefab;
+    // [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private GameObject _visualPrefab;
 
     private void Awake()
@@ -13,6 +13,7 @@ public class EntryPoint : MonoBehaviour
         GameObject playerSystem = new GameObject("PlayerSystem");
         playerSystem.AddComponent<Animator>();
         playerSystem.AddComponent<PlayerInput>();
+        // playerSystem.AddComponent<PlayerData>();
 
         // 2. Добавляем логические компоненты
         var movement = playerSystem.AddComponent<PlayerMovement>();

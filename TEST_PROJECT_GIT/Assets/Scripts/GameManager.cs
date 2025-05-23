@@ -27,4 +27,11 @@ public static class GameManager
     {
         OnStopFishing?.Invoke();
     }
+
+    public static event Action OnHasBait;
+
+    public static void ShowNoBaitMessage()
+    {
+        OnHasBait?.Invoke();
+    }
 }
