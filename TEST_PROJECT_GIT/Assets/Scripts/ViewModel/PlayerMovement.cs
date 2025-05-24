@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     
     
-    private float swipeResistance = 10;
+    private float swipeResistance = 5;
 
     private Animator _animator;
     private ContactFilter2D _contactFilter;
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         //MESS DO NOT TOUCH(or do, i'm not a CEO)
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
+        
 
         inputSys = new Input_presystem();
         inputSys.Player.Enable();
@@ -42,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     public void Init(Animator animator)
     {
         _animator = animator;
-        
     }
 
     private void FixedUpdate()
@@ -51,13 +51,12 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 inputVector = inputSys.Player.Move.ReadValue<Vector2>();
 
-        _rb.linearVelocity = new Vector2(inputVector.x * _moveSpeed, inputVector.y * _moveSpeed);
+        _rb.linearVelocity = new Vector2(inputVector.x * _moveSpeed * Time.deltaTime, inputVector.y * _moveSpeed * Time.deltaTime);
         if (_rb.linearVelocity != Vector2.zero)
         {
             _animator.SetFloat("MoveX", _rb.linearVelocity.x);
             _animator.SetFloat("MoveY", _rb.linearVelocity.y);
         }
-
     }
 
     public void MovePerformed(InputAction.CallbackContext call)
@@ -75,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
             test = true;
             Debug.Log("MINIGAME!!!");
             inputSys.Minigame.Enable();
-            
         }
         else
         {
@@ -111,10 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Down");
             }
         }
-
     }
-
-
 }
 
 
