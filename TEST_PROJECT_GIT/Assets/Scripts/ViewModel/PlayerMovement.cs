@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +9,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 5f;
-
+    
+    
+    private float swipeResistance = 10;
 
     private Animator _animator;
     private ContactFilter2D _contactFilter;
@@ -16,10 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private IInputService _inputService;
     private Input_presystem inputSys;
 
-    
-
-    private Vector2 startTouchPosition;
-    private Vector2 endTouchPosition;
     public bool test;
 
 
@@ -33,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
         inputSys.Player.Move.performed += MovePerformed;
-
+        inputSys.Minigame.swipe.performed += SwipePerformed;
         
         //_inputService = new InputService(); // Creating an input implementation
         test = false;
@@ -59,44 +58,62 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetFloat("MoveY", _rb.linearVelocity.y);
         }
 
-
-
-
-
-
-
-
-
     }
 
     public void MovePerformed(InputAction.CallbackContext call)
     {
-        Debug.Log(call);
+        //Debug.Log(call);
     }
 
 
     public void interact(InputAction.CallbackContext call)
     {
-        Debug.Log("DO SOMETHING!!!!!!!  " + call.phase);
+        //Debug.Log("DO SOMETHING!!!!!!!  " + call.phase);
         //_fishingSystem.StartMiniGame();
-        if (test)
+        if (!test)
         {
-            test = false;
+            test = true;
             Debug.Log("MINIGAME!!!");
-            inputSys.Minigame.Disable();
+            inputSys.Minigame.Enable();
+            
         }
         else
         {
             Debug.Log("DOH");
-            inputSys.Minigame.Enable();
-            test = true;
+            inputSys.Minigame.Disable();
+            test = false;
         }
     }
 
-    private void SwipePerformed(InputAction.CallbackContext context)
+    public void SwipePerformed(InputAction.CallbackContext context)
     {
-        Debug.Log(context);
+        //Debug.Log(context);
+        Vector2 vec = context.ReadValue<Vector2>();
+        //Debug.Log(vec.x + " " + vec.y);
+        if (test) 
+        {
+            //Debug.Log(context.phase);
+            
+            if (vec.x > 0 && Math.Abs(vec.x) > Math.Abs(vec.y) && Math.Abs(vec.x) > swipeResistance)
+            {
+                Debug.Log("Right");
+            }
+            if (vec.x < 0 && Math.Abs(vec.x) > Math.Abs(vec.y) && Math.Abs(vec.x) > swipeResistance)
+            {
+                Debug.Log("Left");
+            }
+            if (vec.y > 0 && Math.Abs(vec.x) < Math.Abs(vec.y) && Math.Abs(vec.y) > swipeResistance)
+            {
+                Debug.Log("Up");
+            }
+            if (vec.y < 0 && Math.Abs(vec.x) < Math.Abs(vec.y) && Math.Abs(vec.y) > swipeResistance)
+            {
+                Debug.Log("Down");
+            }
+        }
+
     }
+
 
 }
 
