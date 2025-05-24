@@ -32,7 +32,8 @@ public class FishingZone : MonoBehaviour
             // Проверяем, есть ли выбранная наживка
             Item selectedItem = SelectedItemManager.Instance.selectedItem;
 
-            if (selectedItem != null && selectedItem is BaitItem baitItem && _player.test)
+            if (selectedItem != null && selectedItem is BaitItem baitItem)
+                //&& _player.test goes inside if statement(check for minigame input)
             {
                 // Проверяем, есть ли такая наживка в инвентаре
                 bool hasBait = Inventory.instance.HasItem(baitItem, baitItem.itemType);

@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _moveSpeed = 500f;
     
     
     private float swipeResistance = 5;
