@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     
     private float swipeResistance = 5;
-
+    
+    
     private Animator _animator;
     private ContactFilter2D _contactFilter;
     private Rigidbody2D _rb;
@@ -26,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
         //MESS DO NOT TOUCH(or do, i'm not a CEO)
         _rb = GetComponent<Rigidbody2D>();
         _rb.bodyType = RigidbodyType2D.Kinematic;
+        _rb.AddComponent<BoxCollider2D>();
+        
         
 
         inputSys = new Input_presystem();
@@ -43,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _animator = animator;
     }
+
+   
+
+
 
     private void FixedUpdate()
     {

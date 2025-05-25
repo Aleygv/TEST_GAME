@@ -5,22 +5,26 @@ using UnityEngine.UI;
 public class InventoryButton : MonoBehaviour
 {
     [SerializeField] private Image inventoryWindow;
+    [SerializeField] private GameObject dpad;
 
     private Button _button;
     private Image _buttonImage;
     
+
     private void OnEnable()
     {
         _buttonImage = GetComponent<Image>();
         _button = GetComponent<Button>();
         GameManager.OnStartFishing += HideButton;
         GameManager.OnStopFishing += ShowButton;
+       
     }
 
     private void OnDisable()
     {
         GameManager.OnStartFishing -= HideButton;
         GameManager.OnStopFishing -= ShowButton;
+        
     }
     
     private void Awake()
@@ -32,6 +36,7 @@ public class InventoryButton : MonoBehaviour
     {
         inventoryWindow.gameObject.SetActive(true);
         HideButton();
+        
     }
 
     public void HideWindow()
@@ -45,6 +50,7 @@ public class InventoryButton : MonoBehaviour
         c.a = 0f;
         _buttonImage.color = c;
         _button.interactable = false;
+        dpad.SetActive(false);
     }
     
     public void ShowButton()
@@ -53,5 +59,6 @@ public class InventoryButton : MonoBehaviour
         c.a = 1f;
         _buttonImage.color = c;
         _button.interactable = true;
+        dpad.SetActive(true);
     }
 }

@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &144355963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1459313947276175485, guid: 49f2dbfded15e2142a679b329b02775a, type: 3}
+  m_PrefabInstance: {fileID: 910826831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471518645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3374275115195942816, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: dpad
+      value: 
+      objectReference: {fileID: 144355963}
     - target: {fileID: 3429915281253576636, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: removeButton
       value: 
