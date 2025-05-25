@@ -120,7 +120,7 @@ public class FishingSystem : MonoBehaviour
     
     private void StartNewRound()
     {
-        int randomArrowCount = Random.Range(1, 4); // длина последовательности
+        int randomArrowCount = Random.Range(3, 5); // длина последовательности
         ArrowButton[] currentRoundArrows = GenerateRandomArrowSequence(randomArrowCount);
         _totalCount = currentRoundArrows.Length;
 
