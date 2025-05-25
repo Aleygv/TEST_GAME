@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c745d27399561ca43a3ed2309eb809ef, type: 3}
   m_Name: BaitLVL2
   m_EditorClassIdentifier: 
-  itemName: Bug
+  itemName: "\u0416\u0443\u043A"
   price: 0
   Stackable: 1
   itemIcon: {fileID: -6211644199689468279, guid: eb602945a761209418f2463926a361a6, type: 3}

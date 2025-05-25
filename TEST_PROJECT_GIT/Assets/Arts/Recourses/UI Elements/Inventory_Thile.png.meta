@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1112f9466133e7645b303015ea2b5ae2
+guid: 14bf1b96197907d4888d47fae5de95f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8558127728108997291
-    second: Sprite-pause_0
+      213: 7623532278954561748
+    second: Inventory_Thile_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-pause_0
+      name: Inventory_Thile_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 23
-        height: 23
+        x: 6
+        y: 2
+        width: 322
+        height: 146
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: baa8b5863d394c670800000000000000
-      internalID: 8558127728108997291
+      spriteID: 4d09fcc673a3cc960800000000000000
+      internalID: 7623532278954561748
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sprite-pause_0: 8558127728108997291
+      Inventory_Thile_0: 7623532278954561748
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

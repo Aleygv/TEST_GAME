@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 22caf810d0ac06f418a049f31eb2b3bf
+guid: 2b042528a47451d4b8e5025057298a93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6987919407968833611
-    second: Backpack_botton_0
+      213: 6543070514544905049
+    second: Sprite-reg_ram-rus-export_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,6 +97,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Backpack_botton_0
+      name: Sprite-reg_ram-rus-export_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 43
-        height: 42
+        x: 123
+        y: 65
+        width: 68
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b405a0f8da31af060800000000000000
-      internalID: 6987919407968833611
+      spriteID: 95b08cf57f7adca50800000000000000
+      internalID: 6543070514544905049
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Backpack_botton_0: 6987919407968833611
+      Sprite-reg_ram-rus-export_0: 6543070514544905049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

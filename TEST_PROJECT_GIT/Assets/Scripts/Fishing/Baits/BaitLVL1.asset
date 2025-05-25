@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c745d27399561ca43a3ed2309eb809ef, type: 3}
   m_Name: BaitLVL1
   m_EditorClassIdentifier: 
-  itemName: Worm
+  itemName: "\u0427\u0435\u0440\u0432\u044C"
   price: 0
   Stackable: 1
   itemIcon: {fileID: -3595242754533312470, guid: eb602945a761209418f2463926a361a6, type: 3}

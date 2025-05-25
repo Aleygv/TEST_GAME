@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 2785fc864c718484fb4f6ab5ddc6a693
+guid: ad3e31d6f5b17ed439d5b7c671946d9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6073936583071989011
-    second: Inventory_tileamaps_0
+      213: -4831090030925170785
+    second: Menu_Thilemap_0
   - first:
-      213: 7640592005200149792
-    second: Inventory_tileamaps_1
+      213: -2074114744614457562
+    second: Menu_Thilemap_1
   - first:
-      213: 4958255876972778849
-    second: Inventory_tileamaps_2
+      213: -5027067131262220049
+    second: Menu_Thilemap_2
   - first:
-      213: -6899559156059075319
-    second: Inventory_tileamaps_3
+      213: -5731977108320582566
+    second: Menu_Thilemap_3
   - first:
-      213: 2294345496344925406
-    second: Inventory_tileamaps_4
+      213: 5265925626714392687
+    second: Menu_Thilemap_4
+  - first:
+      213: 4673208633285007719
+    second: Menu_Thilemap_5
+  - first:
+      213: 7288406396282651183
+    second: Menu_Thilemap_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -121,152 +127,172 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Inventory_tileamaps_0
+      name: Menu_Thilemap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 556
-        width: 320
-        height: 144
+        y: 319
+        width: 353
+        height: 181
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 160.5, y: -68.5}
-        - {x: 160.5, y: 69.5}
-        - {x: 157.5, y: 72.5}
-        - {x: -158.5, y: 72.5}
-        - {x: -160.5, y: 70.5}
-        - {x: -160.5, y: -69.5}
-        - {x: -157.5, y: -72.5}
-        - {x: 156.5, y: -72.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 31d71462425fa4450800000000000000
-      internalID: 6073936583071989011
+      spriteID: f9736cc863584fcb0800000000000000
+      internalID: -4831090030925170785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Inventory_tileamaps_1
+      name: Menu_Thilemap_1
       rect:
         serializedVersion: 2
-        x: 352
-        y: 558
-        width: 208
-        height: 142
+        x: 367
+        y: 468
+        width: 34
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 105, y: 71.5}
-        - {x: -104, y: 71.5}
-        - {x: -105, y: 70.5}
-        - {x: -105, y: -67.5}
-        - {x: -101, y: -71.5}
-        - {x: 105, y: -71.5}
-      - - {x: -96, y: -62.5}
-        - {x: -97, y: 65.5}
-        - {x: 96, y: 66.5}
-        - {x: 97, y: -62.5}
-        - {x: 96, y: -63.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 02df4a772f5d80a60800000000000000
-      internalID: 7640592005200149792
+      spriteID: 62feadff0a34733e0800000000000000
+      internalID: -2074114744614457562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Inventory_tileamaps_2
+      name: Menu_Thilemap_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 467
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8c21324154c3ab0800000000000000
+      internalID: -5027067131262220049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_Thilemap_3
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 468
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5481e5703de370b0800000000000000
+      internalID: -5731977108320582566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_Thilemap_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 392
+        width: 66
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6800f91573541940800000000000000
+      internalID: 5265925626714392687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_Thilemap_5
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 342
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769dd340e729ad040800000000000000
+      internalID: 4673208633285007719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_Thilemap_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 364
-        width: 320
-        height: 176
+        y: 111
+        width: 353
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 161, y: -68}
-        - {x: 161, y: 68}
-        - {x: 160, y: 73}
-        - {x: -161, y: 73}
-        - {x: -161, y: -73}
-        - {x: 160, y: -73}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 165947c33734fc440800000000000000
-      internalID: 4958255876972778849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Inventory_tileamaps_3
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 364
-        width: 320
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: 161, y: -69}
-        - {x: 161, y: 69}
-        - {x: 157, y: 73}
-        - {x: -157, y: 73}
-        - {x: -161, y: 69}
-        - {x: -161, y: -69}
-        - {x: -157, y: -73}
-        - {x: 157, y: -73}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90d0e44c087df30a0800000000000000
-      internalID: -6899559156059075319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Inventory_tileamaps_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 188
-        width: 320
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: 160.5, y: 73}
-        - {x: -160.5, y: 73}
-        - {x: -160.5, y: -73}
-        - {x: 160.5, y: -73}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed418ada21727df10800000000000000
-      internalID: 2294345496344925406
+      spriteID: f22cc15700f952560800000000000000
+      internalID: 7288406396282651183
       vertices: []
       indices: 
       edges: []
@@ -275,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c93f85c3c9b627147aa8f8ee0da56abb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -285,11 +311,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Inventory_tileamaps_0: 6073936583071989011
-      Inventory_tileamaps_1: 7640592005200149792
-      Inventory_tileamaps_2: 4958255876972778849
-      Inventory_tileamaps_3: -6899559156059075319
-      Inventory_tileamaps_4: 2294345496344925406
+      Menu_Thilemap_0: -4831090030925170785
+      Menu_Thilemap_1: -2074114744614457562
+      Menu_Thilemap_2: -5027067131262220049
+      Menu_Thilemap_3: -5731977108320582566
+      Menu_Thilemap_4: 5265925626714392687
+      Menu_Thilemap_5: 4673208633285007719
+      Menu_Thilemap_6: 7288406396282651183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
