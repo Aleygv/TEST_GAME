@@ -219,7 +219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.4, y: 30}
+  m_AnchoredPosition: {x: -16.201, y: 31}
   m_SizeDelta: {x: 67.5983, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2586736137063823557
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Baits
+  m_text: "\u041D\u0430\u0436\u0438\u0432\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 22.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -44.62729, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bait
+  m_text: "\u041D\u0430\u0436\u0438\u0432\u043A\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 22.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -32.0401, y: 0, z: -24.030151, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fishes
+  m_text: "\u0420\u044B\u0431\u044B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.2
+  m_fontSize: 22.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7623532278954561748, guid: 14bf1b96197907d4888d47fae5de95f7, type: 3}
+  m_Sprite: {fileID: -1862914496592171671, guid: 0690d420f52be0845a4a2526609caab5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1501,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.4, y: -54}
+  m_AnchoredPosition: {x: -28, y: -53}
   m_SizeDelta: {x: 67.5983, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2757992272334037004
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Notes
+  m_text: "\u0417\u0430\u043F\u0438\u0441\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.85
+  m_fontSize: 22.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -35.47297, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1712,8 +1712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 204.60002, y: -101.9}
-  m_SizeDelta: {x: 94.1067, y: 15}
+  m_AnchoredPosition: {x: 199.31, y: -101.9}
+  m_SizeDelta: {x: 111.75, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6202928035413779491
 CanvasRenderer:
@@ -1848,8 +1848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_SizeDelta: {x: 279.7035, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1466418128847644742
 CanvasRenderer:
@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fish caught!
+  m_text: "\u0420\u044B\u0431\u0430 \u043F\u043E\u0439\u043C\u0430\u043D\u0430!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -55.65663, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.7154236, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2333,8 +2333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 204.59998, y: -82.200005}
-  m_SizeDelta: {x: 94.1067, y: 15}
+  m_AnchoredPosition: {x: 199.30583, y: -82.200005}
+  m_SizeDelta: {x: 111.754, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4371125254322495115
 CanvasRenderer:
@@ -2966,8 +2966,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_SizeDelta: {x: 344.5273, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2783306986204462108
 CanvasRenderer:
@@ -2997,7 +2997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fish got away
+  m_text: "\u0420\u044B\u0431\u0430 \u0441\u043E\u0440\u0432\u0430\u043B\u0430\u0441\u044C..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2e90761815149f4195087dc64e577ce, type: 2}
   m_sharedMaterial: {fileID: 7538808899093484660, guid: c2e90761815149f4195087dc64e577ce, type: 2}
@@ -3062,7 +3062,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -51.48249, y: 0, z: -133.57594, w: 0}
+  m_margin: {x: -0.41036224, y: 0, z: -0.47887805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: 9b9670c89a0925c47aea76c561e581fb
+guid: e4d2c863b50d9cc4eb1644457b45252a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6754355933318837506
-    second: Thilemap_fishs (2)_0
-  - first:
-      213: 7524546617989296058
-    second: Thilemap_fishs (2)_1
-  - first:
-      213: 912849330824323230
-    second: Thilemap_fishs (2)_2
-  - first:
-      213: -2618753819433608171
-    second: Thilemap_fishs (2)_3
-  - first:
-      213: -8303647944460229137
-    second: Thilemap_fishs (2)_4
-  - first:
-      213: -2976027089288363677
-    second: Thilemap_fishs (2)_5
-  - first:
-      213: -8882266990295859485
-    second: Thilemap_fishs (2)_6
+      213: -3863047001730410268
+    second: pixel arrows FIN_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -127,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Thilemap_fishs (2)_0
+      name: pixel arrows FIN_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 126
-        width: 30
-        height: 28
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,140 +141,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 205750c6fea4cbd50800000000000000
-      internalID: 6754355933318837506
+      spriteID: 4e8983f1833b36ac0800000000000000
+      internalID: -3863047001730410268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thilemap_fishs (2)_1
+      name: pixel arrows FIN_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 127
-        width: 29
-        height: 29
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: abf6e15484f8c6860800000000000000
-      internalID: 7524546617989296058
+      spriteID: 4321823ae2dc9534ab35458ef2553280
+      internalID: -258837897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thilemap_fishs (2)_2
+      name: pixel arrows FIN_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 127
-        width: 29
-        height: 27
+        x: 32
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e90ac3141a71bac00800000000000000
-      internalID: 912849330824323230
+      spriteID: 5648f48b8a00a0a40a11a6e82cec9203
+      internalID: -569454317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thilemap_fishs (2)_3
+      name: pixel arrows FIN_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 30
-        height: 24
+        x: 48
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 51c5676a64158abd0800000000000000
-      internalID: -2618753819433608171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thilemap_fishs (2)_4
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 96
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe5ab8a603483cc80800000000000000
-      internalID: -8303647944460229137
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thilemap_fishs (2)_5
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 96
-        width: 30
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3610705412703b6d0800000000000000
-      internalID: -2976027089288363677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thilemap_fishs (2)_6
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 96
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3eebc3b8b39dbb480800000000000000
-      internalID: -8882266990295859485
+      spriteID: 8c0a4183768ad1349897235bdd9ac5ed
+      internalID: 1581415775
       vertices: []
       indices: 
       edges: []
@@ -288,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1245196d4bee27b479d20bcd8ca85ff3
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +227,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thilemap_fishs (2)_0: 6754355933318837506
-      Thilemap_fishs (2)_1: 7524546617989296058
-      Thilemap_fishs (2)_2: 912849330824323230
-      Thilemap_fishs (2)_3: -2618753819433608171
-      Thilemap_fishs (2)_4: -8303647944460229137
-      Thilemap_fishs (2)_5: -2976027089288363677
-      Thilemap_fishs (2)_6: -8882266990295859485
+      pixel arrows FIN_0: -3863047001730410268
+      pixel arrows FIN_1: -258837897
+      pixel arrows FIN_2: -569454317
+      pixel arrows FIN_3: 1581415775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

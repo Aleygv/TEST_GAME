@@ -42,7 +42,7 @@ public class SelectedItemManager : MonoBehaviour
             if (item is BaitItem baitItem)
             {
                 itemLevelText.gameObject.SetActive(true);
-                itemLevelText.text = "Level " + baitItem.levelOfBait;
+                itemLevelText.text = "Уровень " + baitItem.levelOfBait;
             }
             else
             {

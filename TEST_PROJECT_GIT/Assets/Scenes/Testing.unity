@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: hasNoBait
       value: 
       objectReference: {fileID: 1308651722}
+    - target: {fileID: 1077141952590717608, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5824124992927010336, guid: c729a19de62c6a24dae04383f4288c8d, type: 3}
     - target: {fileID: 1198296020497602025, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: removeButton
       value: 
@@ -976,6 +980,10 @@ PrefabInstance:
     - target: {fileID: 2591078213720455497, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2598849619060381610, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_text
+      value: "\u0420\u044B\u0431\u0430 \u0441\u043E\u0440\u0432\u0430\u043B\u0430\u0441\u044C..."
       objectReference: {fileID: 0}
     - target: {fileID: 3126801604880416659, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1128,6 +1136,19 @@ PrefabInstance:
     - target: {fileID: 3429915281253576636, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: removeButton
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552803797166019934, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_text
+      value: "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439
+        \u043D\u0430\u0436\u0438\u0432\u043A\u0438"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552803797166019934, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_fontSize
+      value: 39.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552803797166019934, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3584054279882388129, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: removeButton
@@ -1372,6 +1393,14 @@ PrefabInstance:
     - target: {fileID: 5874823005103594708, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256348583593709849, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_text
+      value: "\u041F\u0430\u0443\u0437\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256348583593709849, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_fontSize
+      value: 59.7
       objectReference: {fileID: 0}
     - target: {fileID: 6443927165866900780, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1637,6 +1666,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8688069040210553586, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_text
+      value: "\u0420\u044B\u0431\u0430 \u043F\u043E\u0439\u043C\u0430\u043D\u0430!"
+      objectReference: {fileID: 0}
     - target: {fileID: 8753610524358230100, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1689,6 +1722,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9053975800653987587, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6247736374155672110, guid: de72880494afde24987eda5b7eae2d27, type: 3}
     - target: {fileID: 9124928500646814853, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
