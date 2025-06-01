@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaitLVL2
   m_EditorClassIdentifier: 
   itemName: "\u0416\u0443\u043A"
-  price: 0
+  price: 5
   Stackable: 1
   itemIcon: {fileID: -6211644199689468279, guid: eb602945a761209418f2463926a361a6, type: 3}
   itemType: 1

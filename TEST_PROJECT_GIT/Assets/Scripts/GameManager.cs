@@ -34,4 +34,11 @@ public static class GameManager
     {
         OnHasBait?.Invoke();
     }
+
+    public static event Action OnHasFishToSell;
+    
+    public static void ShowHasFishToSellMessage()
+    {
+        OnHasFishToSell?.Invoke();
+    }
 }

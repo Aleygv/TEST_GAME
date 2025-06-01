@@ -154,6 +154,36 @@ public class Inventory : MonoBehaviour
         UpdateInventoryUI();
     }
     
+    public int GetItemCount(Item item)
+    {
+        ItemType type = item.itemType;
+        if (!itemLists.ContainsKey(type)) return 0;
+
+        List<Item> items = itemLists[type];
+        List<int> quantities = quantityLists[type];
+
+        int count = 0;
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i] == item)
+            {
+                count += quantities[i];
+            }
+        }
+        return count;
+    }
+
+// Возвращает список всех предметов всех типов в инвентаре (без повторов)
+    public List<Item> GetAllItems()
+    {
+        List<Item> allItems = new List<Item>();
+        foreach (var pair in itemLists)
+        {
+            allItems.AddRange(pair.Value);
+        }
+        return allItems;
+    }
+    
     private int TotalItemCount()
     {
         int count = 0;
