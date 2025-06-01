@@ -23,7 +23,7 @@ public class FishingZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _interactButton.SetActive(true);
+        // _interactButton.SetActive(true);
         if (other.gameObject.CompareTag("Player"))
         {
             _sprite.color = Color.green;
