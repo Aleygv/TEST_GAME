@@ -18,9 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private IInputService _inputService;
     private Input_presystem inputSys;
+    private bool isWalking;
+    private bool isFishing;
+    private FishingZone _fishingZone;
 
     public bool test;
-
+    
 
     private void Awake()
     {
@@ -35,12 +38,39 @@ public class PlayerMovement : MonoBehaviour
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
         inputSys.Player.Move.performed += MovePerformed;
+        inputSys.Player.Move.canceled += MoveCanceled;
         inputSys.Minigame.swipe.performed += SwipePerformed;
         
-        //_inputService = new InputService(); // Creating an input implementation
+        _fishingZone = FindFirstObjectByType<FishingZone>();
         test = false;
+
+        // Подписываемся на события окончания рыбалки
+        GameManager.OnGameWin += OnFishingEnd;
+        GameManager.OnGameLose += OnFishingEnd;
     }
 
+    private void OnDestroy()
+    {
+        if (inputSys != null)
+        {
+            inputSys.Player.interact.performed -= interact;
+            inputSys.Player.Move.performed -= MovePerformed;
+            inputSys.Player.Move.canceled -= MoveCanceled;
+            inputSys.Minigame.swipe.performed -= SwipePerformed;
+            inputSys.Dispose();
+        }
+
+        // Отписываемся от событий
+        GameManager.OnGameWin -= OnFishingEnd;
+        GameManager.OnGameLose -= OnFishingEnd;
+    }
+
+    private void OnFishingEnd()
+    {
+        test = false;
+        isFishing = false;
+        inputSys.Minigame.Disable();
+    }
 
     public void Init(Animator animator)
     {
@@ -53,51 +83,67 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Move();
-
         Vector2 inputVector = inputSys.Player.Move.ReadValue<Vector2>();
-
+        
+        // Update movement velocity
         _rb.linearVelocity = new Vector2(inputVector.x * _moveSpeed * Time.deltaTime, inputVector.y * _moveSpeed * Time.deltaTime);
+        
+        // Update animator parameters
         if (_rb.linearVelocity != Vector2.zero)
         {
-            _animator.SetFloat("MoveX", _rb.linearVelocity.x);
-            _animator.SetFloat("MoveY", _rb.linearVelocity.y);
-        }
-    }
-
-    public void MovePerformed(InputAction.CallbackContext call)
-    {
-        //Debug.Log(call);
-    }
-
-
-    public void interact(InputAction.CallbackContext call)
-    {
-        //Debug.Log("DO SOMETHING!!!!!!!  " + call.phase);
-        //_fishingSystem.StartMiniGame();
-        if (!test)
-        {
-            test = true;
-            Debug.Log("MINIGAME!!!");
-            inputSys.Minigame.Enable();
+            _animator.SetFloat("MoveX", inputVector.x);
+            _animator.SetFloat("MoveY", inputVector.y);
+            isWalking = true;
         }
         else
         {
-            Debug.Log("DOH");
-            inputSys.Minigame.Disable();
-            test = false;
+            isWalking = false;
+        }
+        _animator.SetBool("IsWalking", isWalking);
+        _animator.SetBool("IsFishing", isFishing);
+    }
+
+    public void MovePerformed(InputAction.CallbackContext context)
+    {
+        Vector2 inputVector = context.ReadValue<Vector2>();
+        isWalking = inputVector != Vector2.zero;
+    }
+
+    public void MoveCanceled(InputAction.CallbackContext context)
+    {
+        isWalking = false;
+    }
+
+    public void interact(InputAction.CallbackContext call)
+    {
+        bool smth = _fishingZone != null;
+        Debug.Log(smth  + "   "  + _fishingZone.IsPlayerInZone);
+        // Проверяем, находимся ли мы в зоне рыбалки и можем ли начать рыбалку
+        if (_fishingZone != null && _fishingZone.IsPlayerInZone)
+        {
+            if (!test && _fishingZone.CanStartFishing())
+            {
+                test = true;
+                isFishing = true;
+                Debug.Log("MINIGAME!!!");
+                inputSys.Minigame.Enable();
+                _fishingZone.FishingSystem.StartMiniGame();
+            }
+            else if (test)
+            {
+                Debug.Log("DOH");
+                inputSys.Minigame.Disable();
+                test = false;
+                isFishing = false;
+            }
         }
     }
 
     public void SwipePerformed(InputAction.CallbackContext context)
     {
-        //Debug.Log(context);
         Vector2 vec = context.ReadValue<Vector2>();
-        //Debug.Log(vec.x + " " + vec.y);
         if (test) 
         {
-            //Debug.Log(context.phase);
-            
             if (vec.x > 0 && Math.Abs(vec.x) > Math.Abs(vec.y) && Math.Abs(vec.x) > swipeResistance)
             {
                 Debug.Log("Right");

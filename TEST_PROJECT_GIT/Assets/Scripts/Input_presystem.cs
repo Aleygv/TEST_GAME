@@ -242,12 +242,12 @@ public partial class @Input_presystem: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""swipe"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""17cec068-e7ed-4b66-bfa8-a2f2c423816f"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [

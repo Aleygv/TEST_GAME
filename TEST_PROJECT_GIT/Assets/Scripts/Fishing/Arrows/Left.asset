@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5feb134735287fc4f9385303a8e5145d, type: 3}
   m_Name: Left
   m_EditorClassIdentifier: 
-  _arrowKey: 276
   _arrowImage: {fileID: 7385664426596942494, guid: 999bf8ff50226b1428991a1e62c52b71, type: 3}
+  _direction: 2

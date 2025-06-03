@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class FishingSystem : MonoBehaviour
@@ -16,6 +17,7 @@ public class FishingSystem : MonoBehaviour
     [SerializeField] private Color redColor = Color.red;
 
     [SerializeField] private float timeLimit = 10f;
+    [SerializeField] private float swipeCooldown = 0.5f; // Задержка между свайпами в секундах
 
     private int _currentArrowIndex = 0;
 
@@ -34,6 +36,10 @@ public class FishingSystem : MonoBehaviour
     private float _addedProgress;
     private float _aimToFillProgressBar;
     private int _currentRepeat = 0;
+    private float _lastSwipeTime; // Время последнего свайпа
+    private float swipeResistance = 5;
+
+    private Input_presystem _inputSystem;
 
     void Start()
     {
@@ -42,6 +48,53 @@ public class FishingSystem : MonoBehaviour
         FishingTimer.Instance.gameObject.SetActive(false);
         // FishingIsCatched.Instance.HideWin();
         // FishingIsCatched.Instance.HideLose();
+
+        _inputSystem = new Input_presystem();
+        _inputSystem.Minigame.swipe.performed += OnSwipePerformed;
+    }
+
+    void OnDestroy()
+    {
+        if (_inputSystem != null)
+        {
+            _inputSystem.Minigame.swipe.performed -= OnSwipePerformed;
+            _inputSystem.Dispose();
+        }
+    }
+
+    private void OnSwipePerformed(InputAction.CallbackContext context)
+    {
+        if (_isPlaying)
+        {
+            // Проверяем, прошло ли достаточно времени с последнего свайпа
+            if (Time.time - _lastSwipeTime < swipeCooldown)
+            {
+                return;
+            }
+
+            Vector2 swipeDirection = context.ReadValue<Vector2>();
+            Debug.Log($"Raw swipe: X={swipeDirection.x}, Y={swipeDirection.y}");
+
+            // Определяем направление на основе большей компоненты
+            Vector2 resultDirection;
+            
+            if (Mathf.Abs(swipeDirection.x) > 0.5f || Mathf.Abs(swipeDirection.y) > 0.5f)
+            {
+                if (Mathf.Abs(swipeDirection.x) > Mathf.Abs(swipeDirection.y))
+                {
+                    resultDirection = swipeDirection.x > 0 ? Vector2.right : Vector2.left;
+                    Debug.Log($"Horizontal swipe detected: {(swipeDirection.x > 0 ? "Right" : "Left")}");
+                }
+                else
+                {
+                    resultDirection = swipeDirection.y > 0 ? Vector2.up : Vector2.down;
+                    Debug.Log($"Vertical swipe detected: {(swipeDirection.y > 0 ? "Up" : "Down")}");
+                }
+
+                _lastSwipeTime = Time.time;
+                CheckArrow(resultDirection);
+            }
+        }
     }
 
     void Update()
@@ -61,16 +114,6 @@ public class FishingSystem : MonoBehaviour
                     FishingProgress.Instance.ResetProgress();
                 }
             }
-
-            // Проверяем все возможные клавиши
-            foreach (var arrow in arrowsPrefab)
-            {
-                if (Input.GetKeyDown(arrow.ArrowKeyCode))
-                {
-                    CheckArrow(arrow.ArrowKeyCode);
-                    break; // Прерываем цикл после обработки нажатия
-                }
-            }
         }
     }
 
@@ -79,12 +122,14 @@ public class FishingSystem : MonoBehaviour
         if (!_isPlaying)
         {
             GameManager.StartFishing();
+            _lastSwipeTime = Time.time; // Инициализируем время последнего свайпа
 
             fishingGameUI.SetActive(true);
             FishingProgress.Instance.gameObject.SetActive(true);
             FishingTimer.Instance.gameObject.SetActive(true);
 
-            StartNewRound(); // Генерируем первую последовательность
+            _inputSystem.Minigame.Enable();
+            StartNewRound();
 
             StartCoroutine(FishingTimer.Instance.StartTimer());
             _isPlaying = true;
@@ -96,75 +141,69 @@ public class FishingSystem : MonoBehaviour
     private ArrowButton[] GenerateRandomArrowSequence(int count)
     {
         ArrowButton[] sequence = new ArrowButton[count];
-
         for (int i = 0; i < count; i++)
         {
-            // Выбираем случайную стрелочку
-            ArrowButton randomArrow = arrowsPrefab[Random.Range(0, arrowsPrefab.Length)];
-
-            // Проверяем, чтобы не было более двух подряд одинаковых стрелочек
-            if (i >= 2 && sequence[i - 1] == randomArrow && sequence[i - 2] == randomArrow)
-            {
-                // Если две предыдущие стрелочки такие же, выбираем другую
-                while (randomArrow == sequence[i - 1])
-                {
-                    randomArrow = arrowsPrefab[Random.Range(0, arrowsPrefab.Length)];
-                }
-            }
-
-            sequence[i] = randomArrow;
+            sequence[i] = arrowsPrefab[Random.Range(0, arrowsPrefab.Length)];
         }
-
         return sequence;
     }
     
     private void StartNewRound()
     {
-        int randomArrowCount = Random.Range(1, 4); // длина последовательности
-        ArrowButton[] currentRoundArrows = GenerateRandomArrowSequence(randomArrowCount);
-        _totalCount = currentRoundArrows.Length;
+        _currentArrowIndex = 0;
+        _totalCount = Random.Range(3, 6);
+        ArrowButton[] sequence = GenerateRandomArrowSequence((int)_totalCount);
 
-        AssignArrowData(currentRoundArrows);
+        // Отключаем все стрелки
+        foreach (var arrow in arrowImages)
+        {
+            arrow.gameObject.SetActive(false);
+        }
+
+        // Активируем и настраиваем нужные стрелки
+        for (int i = 0; i < sequence.Length; i++)
+        {
+            arrowImages[i].gameObject.SetActive(true);
+            arrowImages[i].sprite = sequence[i].ArrowImage.sprite;
+            arrowImages[i].color = grayColor;
+        }
+
         ResetGame();
     }
 
-    // Назначение данных стрелочкам
-    private void AssignArrowData(ArrowButton[] sequence)
+    private void CheckArrow(Vector2 swipeDirection)
     {
-        for (int i = 0; i < arrowImages.Length; i++)
-        {
-            if (i < sequence.Length)
-            {
-                // Назначаем спрайт и цвет
-                arrowImages[i].sprite = sequence[i].ArrowImage.sprite;
-                arrowImages[i].color = grayColor;
-                arrowImages[i].gameObject.SetActive(true); // Активируем стрелочку
-            }
-            else
-            {
-                // Деактивируем лишние стрелочки
-                arrowImages[i].gameObject.SetActive(false);
-            }
-        }
-    }
+        if (_currentArrowIndex >= arrowImages.Length || !arrowImages[_currentArrowIndex].gameObject.activeSelf)
+            return;
 
-    // Проверка нажатия на стрелочку
-    private void CheckArrow(KeyCode key)
-    {
-        KeyCode expectedKey = GetExpectedKey(_currentArrowIndex);
+        Vector2 expectedDirection = GetExpectedDirection(_currentArrowIndex);
+        
+        // Добавляем отладочную информацию
+        Debug.Log($"Swipe Direction: {swipeDirection}, Expected Direction: {expectedDirection}");
+        
+        // Сравниваем направления с учетом погрешности
+        bool isCorrectDirection = false;
+        
+        if (expectedDirection == Vector2.up && swipeDirection.y > 0.5f)
+            isCorrectDirection = true;
+        else if (expectedDirection == Vector2.down && swipeDirection.y < -0.5f)
+            isCorrectDirection = true;
+        else if (expectedDirection == Vector2.left && swipeDirection.x < -0.5f)
+            isCorrectDirection = true;
+        else if (expectedDirection == Vector2.right && swipeDirection.x > 0.5f)
+            isCorrectDirection = true;
 
-        if (key == expectedKey)
+        if (isCorrectDirection)
         {
+            Debug.Log("Correct direction!");
             arrowImages[_currentArrowIndex].color = whiteColor;
             _currentArrowIndex++;
             _currentCount++;
 
-            // Проверяем, завершена ли текущая последовательность
             if (_currentArrowIndex >= arrowImages.Length || !arrowImages[_currentArrowIndex].gameObject.activeSelf)
             {
                 FishingTimer.Instance.ResetTimer();
-                _addedProgress = CalculateProgress(_correctRatio, _currentCount, _totalCount, 0.15f) /
-                                 _aimToFillProgressBar;
+                _addedProgress = CalculateProgress(_correctRatio, _currentCount, _totalCount, 0.15f) / _aimToFillProgressBar;
                 FishingProgress.Instance.AddToProgressBar(_addedProgress);
 
                 if (FishingProgress.Instance.IsFillOver())
@@ -174,7 +213,7 @@ public class FishingSystem : MonoBehaviour
                 }
                 else
                 {
-                    StartNewRound(); // 🎯 Начинаем новый раунд с новой последовательностью
+                    StartNewRound();
                     _isPerfect = true;
                     _currentCount = 0;
                 }
@@ -182,7 +221,7 @@ public class FishingSystem : MonoBehaviour
         }
         else
         {
-            // Ошибочное нажатие — меняем цвет на красный и сбрасываем
+            
             foreach (var arrow in arrowImages)
             {
                 if (arrow.gameObject.activeSelf)
@@ -197,19 +236,17 @@ public class FishingSystem : MonoBehaviour
         }
     }
 
-    // Получение ожидаемой клавиши для текущей стрелочки
-    private KeyCode GetExpectedKey(int index)
+    private Vector2 GetExpectedDirection(int index)
     {
         Sprite currentSprite = arrowImages[index].sprite;
         foreach (var arrowData in arrowsPrefab)
         {
             if (arrowData.ArrowImage.sprite == currentSprite)
             {
-                return arrowData.ArrowKeyCode;
+                return arrowData.Direction;
             }
         }
-
-        return KeyCode.None; // Если не найдено совпадений
+        return Vector2.zero;
     }
 
     private void ResetGame()
@@ -264,6 +301,7 @@ public class FishingSystem : MonoBehaviour
     private void EndGame(bool success)
     {
         _isPlaying = false;
+        _inputSystem.Minigame.Disable();
         fishingGameUI.SetActive(false);
         FishingProgress.Instance.gameObject.SetActive(false);
         FishingTimer.Instance.gameObject.SetActive(false);

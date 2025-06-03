@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 8ed41422e18fae447b001429e29650f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -65146470222856064
+    second: Fishing_Left_Right_0
+  - first:
+      213: 8612922749741830273
+    second: Fishing_Left_Right_1
+  - first:
+      213: 3555812357811607120
+    second: Fishing_Left_Right_2
+  - first:
+      213: -4784704769658743336
+    second: Fishing_Left_Right_3
+  - first:
+      213: -137877748334403625
+    second: Fishing_Left_Right_4
+  - first:
+      213: 6713085730613662865
+    second: Fishing_Left_Right_5
+  - first:
+      213: 6526863476746147118
+    second: Fishing_Left_Right_6
+  - first:
+      213: 3112645099655815436
+    second: Fishing_Left_Right_7
+  - first:
+      213: -8761498154317234906
+    second: Fishing_Left_Right_8
+  - first:
+      213: -7640643147169678624
+    second: Fishing_Left_Right_9
+  - first:
+      213: 3164705138048944789
+    second: Fishing_Left_Right_10
+  - first:
+      213: 8834053613356732591
+    second: Fishing_Left_Right_11
+  - first:
+      213: 6170889807715564591
+    second: Fishing_Left_Right_12
+  - first:
+      213: -9197835404082232070
+    second: Fishing_Left_Right_13
+  - first:
+      213: 3212183507969328617
+    second: Fishing_Left_Right_14
+  - first:
+      213: 4659465625177409845
+    second: Fishing_Left_Right_15
+  - first:
+      213: -6693733392094988011
+    second: Fishing_Left_Right_16
+  - first:
+      213: 947983801268127638
+    second: Fishing_Left_Right_17
+  - first:
+      213: 2997665352761577562
+    second: Fishing_Left_Right_18
+  - first:
+      213: 5105920207811590989
+    second: Fishing_Left_Right_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fishing_Left_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0800ff761ad881ff0800000000000000
+      internalID: -65146470222856064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 33
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1801e309b9f378770800000000000000
+      internalID: 8612922749741830273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 33
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0561e4bff78c85130800000000000000
+      internalID: 3555812357811607120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 33
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d59f59cc50599db0800000000000000
+      internalID: -4784704769658743336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 33
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfd81c1be8261ef0800000000000000
+      internalID: -137877748334403625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19498ff87eba92d50800000000000000
+      internalID: 6713085730613662865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 33
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25dce450c3149a50800000000000000
+      internalID: 6526863476746147118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0168d40a36523b20800000000000000
+      internalID: 3112645099655815436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_8
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 33
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d3eab59d7e86680800000000000000
+      internalID: -8761498154317234906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eabd6d1a8bf6f590800000000000000
+      internalID: -7640643147169678624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_10
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 33
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ac2444e8a4beb20800000000000000
+      internalID: 3164705138048944789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa052eed4fcd89a70800000000000000
+      internalID: 8834053613356732591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_12
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 33
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2cf6f8d59763a550800000000000000
+      internalID: 6170889807715564591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 33
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4ca25ae69ba5080800000000000000
+      internalID: -9197835404082232070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_14
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e541e1b1e7f39c20800000000000000
+      internalID: 3212183507969328617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539c7d79c4fb9a040800000000000000
+      internalID: 4659465625177409845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 519f10fd1f41b13a0800000000000000
+      internalID: -6693733392094988011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_17
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697496f9e3ae72d00800000000000000
+      internalID: 947983801268127638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_18
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5099da81c8d99920800000000000000
+      internalID: 2997665352761577562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fishing_Left_Right_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b391e606fdbd640800000000000000
+      internalID: 5105920207811590989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fishing_Left_Right_0: -65146470222856064
+      Fishing_Left_Right_1: 8612922749741830273
+      Fishing_Left_Right_10: 3164705138048944789
+      Fishing_Left_Right_11: 8834053613356732591
+      Fishing_Left_Right_12: 6170889807715564591
+      Fishing_Left_Right_13: -9197835404082232070
+      Fishing_Left_Right_14: 3212183507969328617
+      Fishing_Left_Right_15: 4659465625177409845
+      Fishing_Left_Right_16: -6693733392094988011
+      Fishing_Left_Right_17: 947983801268127638
+      Fishing_Left_Right_18: 2997665352761577562
+      Fishing_Left_Right_19: 5105920207811590989
+      Fishing_Left_Right_2: 3555812357811607120
+      Fishing_Left_Right_3: -4784704769658743336
+      Fishing_Left_Right_4: -137877748334403625
+      Fishing_Left_Right_5: 6713085730613662865
+      Fishing_Left_Right_6: 6526863476746147118
+      Fishing_Left_Right_7: 3112645099655815436
+      Fishing_Left_Right_8: -8761498154317234906
+      Fishing_Left_Right_9: -7640643147169678624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

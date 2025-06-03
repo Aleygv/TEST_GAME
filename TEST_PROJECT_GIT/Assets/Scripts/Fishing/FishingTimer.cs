@@ -10,7 +10,7 @@ public class FishingTimer : MonoBehaviour
     public static FishingTimer Instance { get; set; }
 
     [SerializeField] private float timeToFish;
-    private readonly float _time = 4;
+    private readonly float _time = 8;
     [SerializeField] private TextMeshProUGUI timerText;
     
     private void Awake()

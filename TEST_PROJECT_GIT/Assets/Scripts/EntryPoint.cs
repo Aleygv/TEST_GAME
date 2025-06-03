@@ -8,24 +8,21 @@ public class EntryPoint : MonoBehaviour
 
     private void Awake()
     {
-        
-        // 1. Создаем системный объект игрока 
+        // 1. РЎРѕР·РґР°РµРј СЃРёСЃС‚РµРјРЅС‹Р№ РѕР±СЉРµРєС‚ РёРіСЂРѕРєР° 
         GameObject playerSystem = new GameObject("PlayerSystem");
+        playerSystem.tag = "Player";
         playerSystem.AddComponent<Animator>();
         playerSystem.AddComponent<PlayerInput>();
-        playerSystem.AddComponent<FishingZone>();
         // playerSystem.AddComponent<PlayerData>();
 
-        // 2. Добавляем логические компоненты
+        // 2. Р”РѕР±Р°РІР»СЏРµРј РєРѕРјРїРѕРЅРµРЅС‚С‹ СѓРїСЂР°РІР»РµРЅРёСЏ
         var movement = playerSystem.AddComponent<PlayerMovement>();
 
-        // 3. Создаем визуал отдельно
+        // 3. РЎРѕР·РґР°РµРј РѕР±СЉРµРєС‚ Р°РЅРёРјР°С†РёРё
         GameObject visual = Instantiate(_visualPrefab);
         visual.transform.SetParent(playerSystem.transform);
 
-        // 4. Связываем компоненты
-        
+        // 4. РќР°СЃС‚СЂРѕР№РєР° РєРѕРјРїРѕРЅРµРЅС‚РѕРІ
         movement.Init(visual.GetComponent<Animator>());
-
     }
 }
