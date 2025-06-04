@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - asas
+  - Player
   - Water
   - UI
-  - NoteDisplay
-  - 
+  - Unsolid
+  - Solid
   - 
   - 
   - 
