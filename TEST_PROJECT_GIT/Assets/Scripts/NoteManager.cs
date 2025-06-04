@@ -18,18 +18,19 @@ public class GenerateTextRequest
     public int max_tokens;
 }
 
-
 public class NoteManager : MonoBehaviour
 {
     private const string BaseUrl = "http://5.35.89.153";
 
-    [Header("Note Items")] [SerializeField]
-    private NoteItem[] noteItems; // Перетянуть 5 NoteItem из проекта
+    [Header("Note Items")]
+    [SerializeField] private NoteItem[] noteItems; // Перетянуть 5 NoteItem из проекта
 
-    [Header("User Data (for demo)")] [SerializeField]
-    private string currentLogin = "test15"; // Текущий логин
-
+    [Header("User Data (for demo)")]
+    [SerializeField] private string currentLogin = "test15"; // Текущий логин
     [SerializeField] private string authToken = ""; // Берётся из PlayerPrefs
+
+    [Header("Prompts for Notes")]
+    [SerializeField] private string[] prompts; // Например: ["story about the rock", "history of the forest", ...]
 
     private static NoteManager _instance;
     public static NoteManager Instance => _instance;
@@ -66,12 +67,35 @@ public class NoteManager : MonoBehaviour
             yield break;
         }
 
+        if (noteItems == null || noteItems.Length == 0)
+        {
+            Debug.LogWarning("Нет записок для загрузки.");
+            yield break;
+        }
+
+        if (prompts == null || prompts.Length < noteItems.Length)
+        {
+            Debug.LogWarning("Мало промптов для всех записок. Будут использованы дефолтные.");
+        }
+
+        for (int i = 0; i < noteItems.Length; i++)
+        {
+            string prompt = i < prompts.Length ? prompts[i] : $"story about item {i + 1}";
+
+            yield return SendGenerateRequestForNote(i, prompt);
+        }
+
+        Debug.Log("Все записки загружены!");
+    }
+
+    private IEnumerator SendGenerateRequestForNote(int noteIndex, string prompt)
+    {
         var request = new GenerateTextRequest
         {
             auth_token = authToken,
             login = currentLogin,
-            prompt = "story about the rock",
-            max_tokens = 600
+            prompt = prompt,
+            max_tokens = 1600
         };
 
         string jsonBody = JsonUtility.ToJson(request);
@@ -88,44 +112,16 @@ public class NoteManager : MonoBehaviour
 
             if (webRequest.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError($"Ошибка получения записок: {webRequest.error}");
+                Debug.LogError($"Ошибка при генерации записки {noteIndex}: {webRequest.error}");
+                noteItems[noteIndex].content = "Не удалось загрузить текст.";
             }
             else
             {
                 GenerateTextResponse response =
                     JsonUtility.FromJson<GenerateTextResponse>(webRequest.downloadHandler.text);
-                SplitAndAssignNotes(response.text);
+                noteItems[noteIndex].content = response.text;
+                Debug.Log($"Записка {noteIndex} загружена: {response.text.Substring(0, Mathf.Min(50, response.text.Length))}...");
             }
         }
-    }
-
-    private void SplitAndAssignNotes(string fullText)
-    {
-        string[] parts = SplitText(fullText, noteItems.Length);
-
-        for (int i = 0; i < noteItems.Length && i < parts.Length; i++)
-        {
-            noteItems[i].content = parts[i];
-            Debug.Log($"Note {i}: {parts[i]}");
-        }
-    }
-
-    private string[] SplitText(string text, int partsCount)
-    {
-        string[] result = new string[partsCount];
-        int length = text.Length / partsCount;
-        for (int i = 0; i < partsCount; i++)
-        {
-            int start = i * length;
-            int end = (i == partsCount - 1) ? text.Length : start + length;
-
-            // Попробуем найти ближайший пробел после end
-            int safeEnd = text.IndexOf(' ', end + 10);
-            if (safeEnd == -1 || safeEnd > text.Length) safeEnd = text.Length;
-
-            result[i] = text.Substring(start, safeEnd - start).Trim();
-        }
-
-        return result;
     }
 }

@@ -5,9 +5,9 @@ using TMPro;
 public class NoteUIManager : MonoBehaviour
 {
     [Header("UI Elements")]
-    [SerializeField] private GameObject notePanel; // Panel с контентом
-    [SerializeField] private Image noteImage; // Изображение записки
-    [SerializeField] private TextMeshProUGUI noteText; // Текст записки
+    [SerializeField] private GameObject notePanel; // Главная панель
+    [SerializeField] private Image displayImage; // Полное изображение записи
+    [SerializeField] private TextMeshProUGUI contentText; // Текст записи
 
     private static NoteUIManager _instance;
     public static NoteUIManager Instance => _instance;
@@ -29,11 +29,28 @@ public class NoteUIManager : MonoBehaviour
 
     public void ShowNote(NoteItem noteItem)
     {
-        if (noteItem == null) return;
+        if (noteItem == null)
+        {
+            Debug.LogError("NoteItem не может быть null");
+            return;
+        }
 
         notePanel.SetActive(true);
-        noteImage.sprite = noteItem.itemIcon; // Устанавливаем иконку записки
-        noteText.text = noteItem.content;
+
+        // Показываем изображение
+        if (noteItem.itemIcon != null)
+        {
+            // displayImage.sprite = noteItem.itemIcon;
+            displayImage.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("У записи нет изображения.");
+            displayImage.enabled = false;
+        }
+
+        // Показываем текст
+        contentText.text = noteItem.content;
     }
 
     public void HideNote()

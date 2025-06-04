@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: FirstNote
   price: 0
   Stackable: 0
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 5541872735039678491, guid: 4860a974cd0328949a28c87a81b07254, type: 3}
   itemType: 2
-  content: 2
+  content: 
