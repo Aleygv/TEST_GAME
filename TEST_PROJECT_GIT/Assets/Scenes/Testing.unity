@@ -892,10 +892,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 519341847956889803, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 556576954239290105, guid: e5dc5fb65427be24795c09505178c4bc, type: 3}
       propertyPath: m_Name
       value: Canvas
