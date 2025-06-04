@@ -29,17 +29,29 @@ public class PlayerMovement : MonoBehaviour
     {
         //MESS DO NOT TOUCH(or do, i'm not a CEO)
         _rb = GetComponent<Rigidbody2D>();
-        _rb.bodyType = RigidbodyType2D.Kinematic;
-        _rb.AddComponent<BoxCollider2D>();
-        
-        
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        _rb.gravityScale = 0f;
+        _rb.freezeRotation = true;
+        _rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
+        // Setup BoxCollider2D
+        var collider = GetComponent<BoxCollider2D>();
+        if (collider == null)
+        {
+            collider = gameObject.AddComponent<BoxCollider2D>();
+        }
+        collider.size = new Vector2(0.8f, 0.8f); // Adjust size to match your sprite
+
+        // Setup Input System
         inputSys = new Input_presystem();
         inputSys.Player.Enable();
         inputSys.Player.interact.performed += interact;
         inputSys.Player.Move.performed += MovePerformed;
         inputSys.Player.Move.canceled += MoveCanceled;
         inputSys.Minigame.swipe.performed += SwipePerformed;
+
+        gameObject.layer = LayerMask.NameToLayer("Player");
         
         _fishingZone = FindFirstObjectByType<FishingZone>();
         test = false;
@@ -138,6 +150,23 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Handle collision enter if needed
+        Debug.Log($"Collision with: {collision.gameObject.name}");
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Handle ongoing collision if needed
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        // Handle collision exit if needed
+    }
+
 
     public void SwipePerformed(InputAction.CallbackContext context)
     {
