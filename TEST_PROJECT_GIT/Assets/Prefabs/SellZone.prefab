@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 549304405226969950}
   - component: {fileID: 4467607195767902096}
   - component: {fileID: 33268474577505403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1619860492215812398}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.22313358}
+  m_LocalPosition: {x: 0, y: -0.11, z: -0.22313358}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -859643545
-  m_SortingLayer: 3
+  m_SortingLayerID: -2019225019
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -8733323854279535155, guid: ca5b03c8c5a5a92428bbcfbfba066498, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

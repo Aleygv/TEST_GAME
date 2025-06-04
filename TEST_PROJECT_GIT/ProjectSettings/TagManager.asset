@@ -44,11 +44,17 @@ TagManager:
   - name: Floors
     uniqueID: 3578392727
     locked: 0
-  - name: Walls
-    uniqueID: 2275742277
+  - name: Upper floors
+    uniqueID: 1337085091
     locked: 0
   - name: Player
     uniqueID: 3435323751
+    locked: 0
+  - name: Walls
+    uniqueID: 2275742277
+    locked: 0
+  - name: Shop
+    uniqueID: 318831547
     locked: 0
   m_RenderingLayers:
   - Default
