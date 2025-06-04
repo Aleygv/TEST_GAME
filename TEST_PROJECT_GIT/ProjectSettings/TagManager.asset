@@ -41,3 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
+=======
+  - name: Floors
+    uniqueID: 3578392727
+    locked: 0
+  - name: floors above
+    uniqueID: 679206413
+    locked: 0
+  - name: Walls
+    uniqueID: 2275742277
+    locked: 0
+  - name: Player
+    uniqueID: 3435323751
+    locked: 0
+  m_RenderingLayers:
+  - Default
+>>>>>>> Stashed changes
