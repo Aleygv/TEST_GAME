@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1741858639229551996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7819243130832049267}
+  - component: {fileID: 8315636684345436788}
+  m_Layer: 0
+  m_Name: NoteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7819243130832049267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741858639229551996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.58859277, y: -0.9653111, z: 0.17603321}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8315636684345436788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741858639229551996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c6adc44b6c73e41b881d4be2b946c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteItems:
+  - {fileID: 11400000, guid: 304ca48dff6ca85418bb0d374f6423a4, type: 2}
+  - {fileID: 11400000, guid: 82d1e91055c1e1e48bf4b311bf34b5b5, type: 2}
+  - {fileID: 11400000, guid: 4470003e20248b1459b85ecf6daaf56e, type: 2}
+  - {fileID: 11400000, guid: f846f0273ff79454e9365cddf76f14f3, type: 2}
+  - {fileID: 11400000, guid: 67fa06fa1d4d71e428971b4f5d1a0b0e, type: 2}
+  currentLogin: testQ
+  authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNSIsImV4cCI6MTc0OTE2NjIyM30.szN_8FEWKdQmGqQzo5My9OjayL2vs56MvlKgrmncYiM '
+  prompts:
+  - "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+    \u043E \u0441\u0442\u0430\u0440\u0438\u043A\u0435 \u0440\u044B\u0431\u0430\u043A\u0435"
+  - "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+    \u043E \u043E\u0437\u0435\u0440\u0435 \u043D\u0430 \u043F\u043E\u043B\u044F\u043D\u0435"
+  - "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+    \u043E \u043F\u0443\u0441\u0442\u044B\u043D\u043D\u043E\u043C \u043E\u0437\u0435\u0440\u0435"
+  - "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+    \u043E \u0441\u0438\u043D\u0435\u0439 \u0440\u044B\u0431\u0435 \u0432 \u043E\u0437\u0435\u0440\u0435"
+  - "\u041C\u0430\u043B\u0435\u043D\u044C\u043A\u0430\u044F \u0438\u0441\u0442\u043E\u0440\u0438\u044F
+    \u043E \u043F\u0443\u0441\u0442\u044B\u043D\u0435"

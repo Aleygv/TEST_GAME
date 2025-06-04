@@ -49,8 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aec85316100b449b02c39ddf547f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemList: []
-  quantityList: 
+  fishSlotParent: {fileID: 0}
+  baitSlotParent: {fileID: 0}
+  noteSlotParent: {fileID: 0}
   inventoryPanel: {fileID: 0}
 --- !u!114 &1191981899929773797
 MonoBehaviour:

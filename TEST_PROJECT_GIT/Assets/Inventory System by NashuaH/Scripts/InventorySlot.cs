@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
@@ -14,10 +13,21 @@ public class InventorySlot : MonoBehaviour
     // Метод вызывается при клике на слот
     public void OnItemSelected()
     {
-        if (item != null)
+        if (item == null) return;
+
+        // Если это записка — показываем UI
+        if (itemType == ItemType.Note)
         {
-            SelectedItemManager.Instance.SetSelectedItem(item);
+            NoteItem noteItem = item as NoteItem;
+            if (noteItem != null)
+            {
+                NoteUIManager.Instance.ShowNote(noteItem);
+                return;
+            }
         }
+
+        // Для остальных предметов — как раньше
+        SelectedItemManager.Instance.SetSelectedItem(item);
     }
 
     public void UpdateSlot(Item itemInSlot, int quantityInSlot, ItemType type, int index)
@@ -31,7 +41,7 @@ public class InventorySlot : MonoBehaviour
             itemImage.enabled = true;
             itemImage.sprite = itemInSlot.itemIcon;
 
-            if (quantityInSlot > 1)
+            if (quantityInSlot > 1 && itemInSlot.Stackable)
             {
                 quantityText.enabled = true;
                 quantityText.text = quantityInSlot.ToString();
